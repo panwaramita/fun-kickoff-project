@@ -2,18 +2,32 @@ import { createTheme } from '@mui/material/styles';
 
 export const theme = createTheme({
   typography: {
-    fontFamily: '"Open Sans", "sans-serif", "Roboto"',
-    fontSize: 12,
+    fontFamily: '"Ariel", "Roboto"',
+    fontSize: 10,
+    fontWeightRegular: 700,
     button: {
       textTransform: 'none',
       fontWeight: 700,
     },
+    h5: {
+      fontSize: 30,
+      fontWeight: 900,
+    },
   },
   palette: {
-    primary: { main: '#3A8DFF' },
+    primary: { main: '#f14140' },
   },
   shape: {
     borderRadius: 5,
   },
-  spacing: 6,
+  components: {
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          marginBottom: '15px',
+          marginTop: '3px',
+        },
+      },
+    },
+  },
 });
