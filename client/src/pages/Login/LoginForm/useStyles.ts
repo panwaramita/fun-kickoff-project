@@ -7,10 +7,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     marginTop: theme.spacing(1),
   },
   label: {
-    color: '#000000',
-    fontSize: 12,
-    fontWeight: 950,
-    textTransform: 'uppercase',
+    fontSize: 19,
+    color: 'rgb(0,0,0,0.4)',
+    paddingLeft: '5px',
   },
   inputs: {
     marginTop: '.8rem',
