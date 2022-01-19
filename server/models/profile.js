@@ -47,5 +47,10 @@ const profileSchema = new mongoose.Schema({
         required: false
     },
     avaliabilty: [avaliableTime],
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: "User",
+    },
 });
 module.exports = Profile = mongoose.model("Profile", profileSchema);
