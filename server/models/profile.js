@@ -5,7 +5,7 @@ const avaliableTime = new mongoose.Schema({
         required: true,
     },
     timeTo: {
-        type: Strings,
+        type: String,
         required: true,
     },
     timeFrom: {
