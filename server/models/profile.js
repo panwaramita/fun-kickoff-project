@@ -16,35 +16,35 @@ const avaliableTime = new mongoose.Schema({
 const profileSchema = new mongoose.Schema({
     firstName: {
         type: String,
-        required: false,
+        required: true,
     },
     lastName: {
         type: String,
-        required: false,
+        required: true,
     },
     description: {
         type: String,
-        required: false,
+        required: true,
     },
     phoneNo: {
         type: Number,
-        required: false,
+        required: true,
     },
     photoUrl: {
         type: String,
-        required: false,
+        required: true,
     },
     email: {
         type: String,
-        required: false
+        required: true
     },
     city: {
         type: String,
-        required: false
+        required: true
     },
     DateOfBirth: {
         type: String,
-        required: false
+        required: true
     },
     avaliabilty: [avaliableTime],
     user: {
