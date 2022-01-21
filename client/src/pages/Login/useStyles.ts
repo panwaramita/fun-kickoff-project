@@ -11,10 +11,6 @@ const useStyles = makeStyles(() => ({
     backgroundColor: '#fafafa',
   },
   authWrapper: {
-    display: 'flex',
-    alignItems: 'flex-start',
-    justifyContent: 'space-between',
-    flexDirection: 'column',
     paddingTop: 23,
   },
   welcome: {

@@ -7,9 +7,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     flexWrap: 'wrap',
   },
   accAside: {
-    fontSize: 14,
-    color: '#000000',
-    fontWeight: 400,
     textAlign: 'center',
     whiteSpace: 'nowrap',
     display: 'flex',
@@ -17,7 +14,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     padding: '1rem',
     paddingRight: '0.5em',
   },
-  accBtn: {
+  authLink: {
     color: ' #f14140',
   },
 }));
