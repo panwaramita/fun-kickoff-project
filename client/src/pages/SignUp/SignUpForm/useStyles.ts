@@ -6,12 +6,6 @@ const useStyles = makeStyles((theme: Theme) => ({
     width: '100%', // Fix IE 11 issue.
     marginTop: theme.spacing(1),
   },
-  label: {
-    color: '#000000',
-    fontSize: 12,
-    fontWeight: 950,
-    textTransform: 'uppercase',
-  },
   inputs: {
     marginTop: '0.2rem',
     height: '2rem',

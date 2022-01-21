@@ -22,8 +22,10 @@ const AuthFooter = ({ linkTo, asideText, btnText }: Props): JSX.Element => {
       marginRight={5}
       className={classes.authHeader}
     >
-      <Typography className={classes.accAside}>{asideText}</Typography>
-      <Link to={linkTo} color="inherit" className={classes.accBtn}>
+      <Typography component="h5" className={classes.accAside}>
+        {asideText}
+      </Typography>
+      <Link to={linkTo} color="inherit" className={classes.authLink}>
         {btnText}
       </Link>
     </Box>

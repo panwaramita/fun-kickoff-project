@@ -12,6 +12,8 @@ export const theme = createTheme({
     h5: {
       fontSize: 30,
       fontWeight: 900,
+      color: '#0000000',
+      textTransform: 'uppercase',
     },
   },
   palette: {
@@ -26,6 +28,20 @@ export const theme = createTheme({
         root: {
           marginBottom: '15px',
           marginTop: '3px',
+        },
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: 'uppercase',
+        },
+      },
+    },
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          textTransform: 'uppercase',
         },
       },
     },

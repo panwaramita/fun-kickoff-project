@@ -52,7 +52,7 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
     >
       {({ handleSubmit, handleChange, values, touched, errors, isSubmitting }) => (
         <form onSubmit={handleSubmit} className={classes.form} noValidate>
-          <Typography className={classes.label}>email address</Typography>
+          <Typography>email address</Typography>
           <TextField
             id="email"
             fullWidth
@@ -70,7 +70,7 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
             onChange={handleChange}
             placeholder="Your email"
           />
-          <Typography className={classes.label}>Name</Typography>
+          <Typography>Name</Typography>
           <TextField
             id="username"
             fullWidth
@@ -89,7 +89,7 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
             onChange={handleChange}
             placeholder="Your name"
           />
-          <Typography className={classes.label}>PASSWORD</Typography>
+          <Typography>password</Typography>
           <TextField
             id="password"
             fullWidth
@@ -111,7 +111,7 @@ const SignUpForm = ({ handleSubmit }: Props): JSX.Element => {
 
           <Box textAlign="center" marginTop={5}>
             <Button type="submit" size="large" variant="contained" color="primary" className={classes.submit}>
-              {isSubmitting ? <CircularProgress style={{ color: 'white' }} /> : 'SIGN UP'}
+              {isSubmitting ? <CircularProgress style={{ color: 'white' }} /> : 'sign up'}
             </Button>
           </Box>
         </form>
