@@ -34,20 +34,16 @@ const profileSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    email: {
-        type: String,
-        required: true
-    },
     city: {
         type: String,
         required: true
     },
-    DateOfBirth: {
+    dateOfBirth: {
         type: String,
         required: true
     },
     avaliabilty: [avaliableTime],
-    user: {
+    userId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
     },
