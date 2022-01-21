@@ -34,15 +34,11 @@ const profileSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    email: {
-        type: String,
-        required: true
-    },
     city: {
         type: String,
         required: true
     },
-    DateOfBirth: {
+    dateOfBirth: {
         type: String,
         required: true
     },
@@ -51,6 +47,11 @@ const profileSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: "User",
+    },
+    gender: {
+        type: String,
+        enum : ['male','female'],
+        required:true,
     },
 });
 module.exports = Profile = mongoose.model("Profile", profileSchema);
