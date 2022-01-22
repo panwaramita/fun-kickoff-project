@@ -1,21 +1,19 @@
+process.env.NODE_ENV = 'test';
 const chai = require("chai");
 const chaiHttp = require("chai-http");
-const app = require("../app.js");
+const { server } = require("../app.js");
 
 chai.should();
 chai.use(chaiHttp);
 
-describe("/POST ping", () => {
+describe("/POST /auth/logout", () => {
   it("it should return 200 and message", (done) => {
     chai
-      .request(app)
-      .post(`/ping/`)
-      .send({ message: "hello" })
+      .request(server)
+      .post('/auth/logout/')
       .end((err, res) => {
         res.should.have.status(200);
-        res.body.should.have
-          .property("response")
-          .eql("Server is running. Message received: hello");
+        res.text.should.equal("You have successfully logged out");
         done();
       });
   });
