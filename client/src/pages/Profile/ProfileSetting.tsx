@@ -7,9 +7,9 @@ import { Navbar } from '../../components/Navbar/Navbar';
 import useStyles from './useStyles';
 import { Link } from 'react-router-dom';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-import ProfilePhoto from '../../components/Profilephoto/ProfilePhoto';
-import Availabilty from '../../components/Profilephoto/Availabilty';
-import EditProfile from '../../components/Profilephoto/EditProfile';
+import ProfilePhoto from '../../components/Profile/ProfilePhoto';
+import Availabilty from '../../components/Profile/Availabilty';
+import EditProfile from '../../components/Profile/EditProfile';
 
 export default function ProfileSetting(): JSX.Element {
   const { loggedInUser } = useAuth();
