@@ -5,42 +5,42 @@ const { server } = require("../app.js");
 chai.should();
 chai.use(chaiHttp);
 
-const register_detailUsername={
+const registerDetailUsername={
   'username':'Henry',
   'email':'pwar.Henry@gmail.com',
-  'password':'Henry@123'
+  'password':'Henry@123',
 }
-const register_detailEmail={
+const registerDetailEmail={
   'username':'Henry',
   'email':'panwar.Henry@gmail.com',
-  'password':'Henry@123'
+  'password':'Henry@123',
 }
-const register_detailInfo={
+const registerDetailInfo={
   'username':'asita',
   'email':'panaar.Henry@gmail.com',
-  'password':'Henry@123'
+  'password':'Henry@123',
 }
-const register_detailInvlidEmail={
+const registerDetailInvalidEmail={
   'username':'Henry',
   'email':'panaar.Henrygmail.com',
-  'password':'Henry@13'
+  'password':'Henry@13',
 }
-const register_detailInvalidUserName={
+const registerDetailInvalidUserName={
   'username':'',
   'email':'panaar.Henry@gmail.com',
-  'password':'Henry@123'
+  'password':'Henry@123',
 }
-const register_detailInvalidPassword={
+const registerDetailInvalidPassword={
   'username':'123',
   'email':'panaar.Henry@gmail.com',
-  'password':'ami13'
+  'password':'ami13',
 }
 describe("/POST /auth/register", () => {
   it("it should return 400 and message", (done) => {
     chai
       .request(server)
       .post('/auth/register/')
-      .send(register_detailEmail)
+      .send(registerDetailEmail)
       .end((err, res) => {
         res.should.have.status(400);
         res.body.error.should.equal("A user with that email already exists");
@@ -51,7 +51,7 @@ describe("/POST /auth/register", () => {
     chai
       .request(server)
       .post('/auth/register/')
-      .send(register_detailUsername)
+      .send(registerDetailUsername)
       .end((err, res) => {
         res.should.have.status(400);
         res.body.error.should.equal("A user with that username already exists");
@@ -62,15 +62,14 @@ describe("/POST /auth/register", () => {
     chai
       .request(server)
       .post('/auth/register/')
-      .send(register_detailInfo)
+      .send(registerDetailInfo)
       .end((err, res) => {
-      const cookie=res.headers['set-cookie']; 
-      res.should.have.status(201);
-          cookie.should.not.be.empty;
-        res.body.success.user.should.be.an('Object');
-
-        const token=cookie[0].substr(cookie[0].indexOf("=") + 1);
-        const id="61e78b4a74fcc293903ca2c";
+       res.should.have.status(201);
+       res.cookies.should.not.be.empty;
+       res.cookies.should.have.property('token');
+       res.body.success.user.should.be.an('Object');
+       const token=cookie[0].substr(cookie[0].indexOf("=") + 1);
+       const id="61e78b4a74fcc293903ca2c";
         chai
         .request(server)
         .get('/auth/user?id='+id)
@@ -85,7 +84,7 @@ describe("/POST /auth/register", () => {
     chai
       .request(server)
       .post('/auth/register/')
-      .send(register_detailInvlidEmail)
+      .send(registerDetailInvalidEmail)
       .end((err, res) => {
           res.should.have.status(400);
           const msg=res.body.errors[0].msg;
@@ -97,7 +96,7 @@ describe("/POST /auth/register", () => {
     chai
       .request(server)
       .post('/auth/register/')
-      .send(register_detailInvalidUserName)
+      .send(registerDetailInvalidUserName)
       .end((err, res) => {
           res.should.have.status(400);
           const msg=res.body.errors[0].msg;
@@ -111,11 +110,24 @@ it("it should return 400 and error message", (done) => {
   chai
     .request(server)  
     .post('/auth/register/')
-    .send(register_detailInvalidPassword)
+    .send(registerDetailInvalidPassword)
     .end((err, res) => {
         res.should.have.status(400);
         const msg=res.body.errors[0].msg;
         msg.should.equal('Please enter a password with 6 or more characters');
+        done();
+    });
+});
+it("it should return 400 and error message", (done) => {
+  chai
+    .request(server)  
+    .post('/auth/register/')
+    .send()
+    .end((err, res) => {
+        res.should.have.status(400);
+        res.cookies.should.have.property('token');
+        const msg=res.body.errors[0].msg;
+        msg.should.equal('Token not found');
         done();
     });
 });
