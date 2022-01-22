@@ -46,11 +46,10 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
     >
       {({ handleSubmit, handleChange, values, touched, errors, isSubmitting }) => (
         <form onSubmit={handleSubmit} className={classes.form} noValidate>
+          <Typography>email address</Typography>
           <TextField
             id="email"
-            label={<Typography className={classes.label}>E-mail address</Typography>}
             fullWidth
-            margin="normal"
             InputLabelProps={{
               shrink: true,
             }}
@@ -64,12 +63,12 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
             error={touched.email && Boolean(errors.email)}
             value={values.email}
             onChange={handleChange}
+            placeholder="Your email"
           />
+          <Typography>Password</Typography>
           <TextField
             id="password"
-            label={<Typography className={classes.label}>Password</Typography>}
             fullWidth
-            margin="normal"
             InputLabelProps={{
               shrink: true,
             }}
@@ -83,13 +82,14 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
             error={touched.password && Boolean(errors.password)}
             value={values.password}
             onChange={handleChange}
+            placeholder="Your password"
           />
-          <Box textAlign="center" marginTop={5}>
+          <Box textAlign="center" marginTop={1}>
             <Button type="submit" size="large" variant="contained" color="primary" className={classes.submit}>
               {isSubmitting ? <CircularProgress style={{ color: 'white' }} /> : 'Login'}
             </Button>
           </Box>
-          <Box height={95} />
+          <Box height={30} />
         </form>
       )}
     </Formik>

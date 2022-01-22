@@ -17,15 +17,17 @@ const AuthFooter = ({ linkTo, asideText, btnText }: Props): JSX.Element => {
     <Box
       p={1}
       display="flex"
-      justifyContent="flex-end"
+      justifyContent="center"
       alignSelf="flex-end"
       marginRight={5}
       className={classes.authHeader}
     >
-      <Typography className={classes.accAside}>{asideText}</Typography>
-      <Button component={Link} to={linkTo} color="inherit" className={classes.accBtn} variant="contained">
+      <Typography component="h5" className={classes.accAside}>
+        {asideText}
+      </Typography>
+      <Link to={linkTo} color="inherit" className={classes.authLink}>
         {btnText}
-      </Button>
+      </Link>
     </Box>
   );
 };
