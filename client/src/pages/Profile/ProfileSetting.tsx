@@ -2,14 +2,13 @@ import React, { useEffect } from 'react';
 import { useAuth } from '../../context/useAuthContext';
 import { useSocket } from '../../context/useSocketContext';
 import { NavLink, useHistory } from 'react-router-dom';
-import { CircularProgress, Grid, Box } from '@mui/material';
+import { CircularProgress, Grid, Box, List } from '@mui/material';
 import { Navbar } from '../../components/Navbar/Navbar';
 import useStyles from './useStyles';
-import { Link } from 'react-router-dom';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-import ProfilePhoto from '../../components/Profilephoto/ProfilePhoto';
-import Availabilty from '../../components/Profilephoto/Availabilty';
-import EditProfile from '../../components/Profilephoto/EditProfile';
+import ProfilePhoto from '../../components/Profile/ProfilePhoto';
+import Availabilty from '../../components/Profile/Availabilty';
+import EditProfile from '../../components/Profile/EditProfile';
 
 export default function ProfileSetting(): JSX.Element {
   const { loggedInUser } = useAuth();
@@ -23,7 +22,6 @@ export default function ProfileSetting(): JSX.Element {
   if (loggedInUser === undefined) return <CircularProgress />;
   if (!loggedInUser) {
     history.push('/login');
-    // loading for a split seconds until history.push works
     return <CircularProgress />;
   }
 
@@ -33,7 +31,7 @@ export default function ProfileSetting(): JSX.Element {
       <Router>
         <Grid sx={{ padding: 5, marginTop: 5 }} container rowSpacing={5} columnSpacing={2} className={classes.root}>
           <Grid item xs={2} className={classes.listItem}>
-            <ul className={classes.list}>
+            <List className={classes.list}>
               <li className={classes.listElement}>
                 <NavLink exact className={classes.link} activeClassName={classes.activeLink} to="/editProfile">
                   Edit Profile
@@ -64,7 +62,7 @@ export default function ProfileSetting(): JSX.Element {
                   Settings
                 </NavLink>
               </li>
-            </ul>
+            </List>
           </Grid>
           <Grid item xs={10}>
             <Box width="100%" maxWidth={450} p={3} alignSelf="center" className={classes.box}>
