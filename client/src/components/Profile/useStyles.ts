@@ -52,6 +52,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     borderRadius: '5px',
     textTransform: 'none',
     width: '30%',
+    backgroundColor: 'white',
+    color: '#f14140',
   },
   testWidth: {
     width: '80%',

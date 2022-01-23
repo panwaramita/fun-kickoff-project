@@ -171,7 +171,7 @@ const EditProfile = (): JSX.Element => {
             </Box>
           </Grid>
         </Grid>
-        <Box textAlign="center" marginTop={5}>
+        <Box textAlign="center" marginTop={4}>
           <Button type="submit" size="large" variant="contained" color="primary" className={classes.submit}>
             Save
           </Button>

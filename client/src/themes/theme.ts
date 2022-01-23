@@ -20,7 +20,7 @@ export const theme = createTheme({
     },
   },
   palette: {
-    primary: { main: '#f14140' },
+    primary: { main: '#3a8dff' },
   },
   shape: {
     borderRadius: 5,
@@ -38,6 +38,7 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           textTransform: 'uppercase',
+          backgroundColor: '#f14140',
         },
       },
     },
