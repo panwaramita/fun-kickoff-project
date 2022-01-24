@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../context/useAuthContext';
+import { useHistory } from 'react-router-dom';
 import {
   AppBar,
   Toolbar,
@@ -17,7 +18,7 @@ import { Person as ProfileIcon, Logout as LogoutIcon, Settings as SettingsIcon }
 const Navbar: React.FC = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const { loggedInUser, logout } = useAuth();
-
+  const history = useHistory();
   const open = Boolean(anchorEl);
 
   const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
@@ -32,7 +33,9 @@ const Navbar: React.FC = () => {
     handleClose();
     logout();
   };
-
+  const handleProfile = () => {
+    history.push('/profileSetting');
+  };
   return (
     <AppBar position="static">
       <Toolbar>
@@ -69,7 +72,7 @@ const Navbar: React.FC = () => {
               open={open}
               onClose={handleClose}
             >
-              <MenuItem onClick={handleClose}>
+              <MenuItem onClick={handleProfile}>
                 <ListItemIcon>
                   <SettingsIcon fontSize="small" />
                 </ListItemIcon>
