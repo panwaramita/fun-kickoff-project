@@ -40,20 +40,28 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontSize: '15px',
     marginLeft: '22px',
     fontStyle: 'italic',
+    float: 'left',
+    textTransform: 'none',
   },
   gridItem: {
     marginTop: '10px',
     marginBottom: '10px',
+    textAlign: 'left',
   },
   phoneButton: {
     fontSize: '15px',
-    marginLeft: '200px',
+    marginLeft: '210px',
     border: '0.5px solid #f14140',
     borderRadius: '5px',
     textTransform: 'none',
     width: '30%',
     backgroundColor: 'white',
     color: '#f14140',
+    marginTop: '-10px',
+  },
+  labelEdit: {
+    fontSize: '35px',
+    color: '#000000',
   },
   testWidth: {
     width: '80%',
@@ -65,7 +73,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontSize: 15,
   },
   phoneDetails: {
-    marginTop: '19px',
+    marginTop: '23px',
     marginBottom: '25px',
   },
   inputsDescription: {

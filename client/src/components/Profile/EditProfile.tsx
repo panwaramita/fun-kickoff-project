@@ -40,7 +40,7 @@ const EditProfile = (): JSX.Element => {
         alignSelf="flex-end"
         marginRight={5}
       >
-        <label style={{ fontSize: '35px' }}>Edit Profile</label>
+        <InputLabel className={classes.labelEdit}>Edit Profile</InputLabel>
       </Box>
       <form className={classes.form} noValidate>
         <Grid container component="main" className={classes.root}>
@@ -135,7 +135,7 @@ const EditProfile = (): JSX.Element => {
                 placeholder="Your email"
               />
               <Box flexDirection="row" className={classes.phoneDetails}>
-                <span className={classes.phoneNumber}>No Phone number entered</span>
+                <Typography className={classes.phoneNumber}>No Phone number entered</Typography>
                 <Button className={classes.phoneButton}>Add a phone number</Button>
               </Box>
               <TextField

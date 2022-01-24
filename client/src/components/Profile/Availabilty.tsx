@@ -13,7 +13,7 @@ const Availabilty = (): JSX.Element => {
       alignSelf="flex-end"
       marginRight={5}
     >
-      <h1>Availabilty</h1>
+      <Typography>Availabilty</Typography>
     </Box>
   );
 };

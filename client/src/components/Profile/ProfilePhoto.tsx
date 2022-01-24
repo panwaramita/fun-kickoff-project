@@ -13,7 +13,7 @@ const ProfilePhoto = (): JSX.Element => {
       alignSelf="flex-end"
       marginRight={5}
     >
-      <h1>Profile Photo</h1>
+      <Typography>Profile Photo</Typography>
     </Box>
   );
 };
